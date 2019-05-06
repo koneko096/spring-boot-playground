@@ -12,10 +12,23 @@ logging:
 
 security:
   oauth2:
-    client:
-      client-id: ID
-      client-secret: SECRET
-      access-token-uri: http://localhost:8000/oauth/token
     resource:
       id: 2
       token-info-uri: http://localhost:8000/oauth/introspect
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: FULL
+
+ribbon:
+  eureka:
+    enabled: false
+
+student:
+  ribbon:
+    NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
+    listOfServers: localhost:8080
