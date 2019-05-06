@@ -12,13 +12,10 @@ logging:
 
 security:
   oauth2:
-    resource:
-      id: RESOURCEID
-      jwt:
-        keyValue: |
-          -----BEGIN PUBLIC KEY-----
-          PUBLIC KEY
-          -----END PUBLIC KEY-----
     client:
-      clientId: ID
-      clientSecret: SECRET
+      client-id: ID
+      client-secret: SECRET
+      access-token-uri: http://localhost:8000/oauth/token
+    resource:
+      id: 2
+      token-info-uri: http://localhost:8000/oauth/introspect
