@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      config:
+        enabled: true
+        failFast: true
+        prefix: config
+        format: YAML
+        name: boot
+        data-key: application.yml
+        watch:
+          delay: 5000

@@ -5,9 +5,10 @@ server:
 
 logging:
   level:
-    root: INFO
+    root: DEBUG
     com:
       netflix: DEBUG
+  file: app.log
 
 security:
   oauth2:
