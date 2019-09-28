@@ -23,3 +23,10 @@ management:
       enabled: true
     info:
       enabled: true
+  health:
+    mongo:
+      enabled: false
+    rabbit:
+      enabled: false
+    redis:
+      enabled: false

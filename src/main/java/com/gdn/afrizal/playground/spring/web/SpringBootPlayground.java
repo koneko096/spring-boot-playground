@@ -23,7 +23,8 @@ public class SpringBootPlayground extends ResourceServerConfigurerAdapter {
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().anyRequest().authenticated();
+        http.antMatcher("/api/**").authorizeRequests().anyRequest().authenticated()
+            .anyRequest().permitAll();
     }
 
     @Override
