@@ -1,14 +1,25 @@
 spring:
+  application:
+    name: spring-boot-playground
   cloud:
-    consul:
-      host: localhost
-      port: 8500
+    kubernetes:
       config:
-        enabled: true
-        failFast: true
-        prefix: config
-        format: YAML
-        name: boot
-        data-key: application.yml
-        watch:
-          delay: 5000
+        enabled: ${CONFIG_ENABLED:false}
+        name: ${CONFIG_NAME:spring-boot-playground}
+      secrets:
+        enabled: ${SECRETS_ENABLED:false}
+        name: ${SECRETS_NAME:spring-boot-playground}
+      reload:
+        enabled: ${CONFIG_ENABLED:false}
+        mode: polling
+
+logging.level.root: WARN
+
+management:
+  endpoint:
+    restart:
+      enabled: true
+    health:
+      enabled: true
+    info:
+      enabled: true

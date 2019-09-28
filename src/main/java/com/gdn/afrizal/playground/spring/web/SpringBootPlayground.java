@@ -12,13 +12,13 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
 @SpringBootApplication
 @EnableFeignClients(basePackages = "com.gdn.afrizal.playground.spring.client")
 @EnableResourceServer
-public class ExampleApp extends ResourceServerConfigurerAdapter {
+public class SpringBootPlayground extends ResourceServerConfigurerAdapter {
 
     @Value("${security.oauth2.resource.id}")
     private String resourceId;
 
     public static void main(String[] args) {
-        SpringApplication.run(ExampleApp.class, args);
+        SpringApplication.run(SpringBootPlayground.class, args);
     }
 
     @Override

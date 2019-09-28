@@ -13,8 +13,9 @@ import org.springframework.security.core.Authentication;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api")
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-public class ExampleController {
+public class ApiController {
 
     @Autowired
     StudentClient studentClient;

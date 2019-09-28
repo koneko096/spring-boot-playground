@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @FeignClient(
-        name="student",
-        fallback = StudentClientFallback.class
+    url = "${client.student.endpoint}",
+    name = "student",
+    fallback = StudentClientFallback.class
 )
 public interface StudentClient {
     @RequestMapping(value = "/student/{studentId}/enrollment", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
