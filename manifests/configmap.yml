@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: spring-boot-playground-config
+data:
+  application.yml: |-
+    server:
+      port: 8080
+      servlet:
+        context-path: /
+    logging:
+      level:
+        root: INFO
+      pattern:
+        console: "%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger.%M - %msg%n"
+    security:
+      oauth2:
+        resource:
+          id: 2
+          token-info-uri: "http://localhost:8000/oauth/introspect"
+    client:
+      student:
+        endpoint: "itebeh.herokuapp.com"
+    feign:
+      client:
+        config:
+          default:
+            connectTimeout: 5000
+            readTimeout: 5000
