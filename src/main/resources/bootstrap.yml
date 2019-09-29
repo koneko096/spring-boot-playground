@@ -13,7 +13,7 @@ spring:
         enabled: ${CONFIG_ENABLED:false}
         mode: polling
 
-logging.level.root: WARN
+logging.level.root: INFO
 
 management:
   endpoint:
