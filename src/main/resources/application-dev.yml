@@ -23,7 +23,7 @@ security:
 
 client:
   student:
-    endpoint: itebeh.herokuapp.com
+    endpoint: https://itebeh.herokuapp.com
 
 feign:
   client:
